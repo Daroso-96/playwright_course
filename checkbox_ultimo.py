@@ -1,9 +1,10 @@
 import re
+import time
 from playwright.sync_api import Playwright, sync_playwright, expect
-
+#playwright codegen https://demoqa.com/checkbox
 # pytest --slowmo 2000  --headed checkbox_ultimo.py
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=False, slow_mo=3000)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://demoqa.com/checkbox")
