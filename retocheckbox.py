@@ -13,11 +13,15 @@ def run(playwright: Playwright) -> None:
 
     page.goto("https://testingqarvn.com.es/prueba-de-campos-checkbox/")
     expect(page).to_have_title("Prueba de campos Checkbox | TestingQaRvn")
+    page.mouse.wheel(0, 400)  # coordenas en x ,y
+    time.sleep(2)
+
     page.locator("//input[@id='wsf-1-field-29']").fill("Sasha")
     #page.screenshot(path="Imagenes/texto_nombre.png")
 
     page.locator("//input[@id='wsf-1-field-30']").fill("Dog")
     #page.screenshot(path="Imagenes/texto_email.png")
+    #scroll
 
     page.locator("//input[@id='wsf-1-field-31']").fill("sasha@gmail.com")
     #page.screenshot(path="Imagenes/texto_dirección.png")
