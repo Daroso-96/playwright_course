@@ -70,7 +70,7 @@ def run(playwright: Playwright) -> None:
 
     for i in range(7,9):
         page.locator(f"(//label[contains(@class,'wsf-label')])[{i}]").click()
-        
+
 
     page.locator("//button[@id='wsf-1-field-34']").click()
 

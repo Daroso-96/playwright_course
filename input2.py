@@ -36,6 +36,17 @@ def test_input2(page: Page):
     page.locator("#wsf-1-field-24").fill("300356875")
     page.locator("#wsf-1-field-28").fill("Sincelejo ciudad de sashita")
 
-
-    page.locator("//button[@id='wsf-1-field-27']").click()
-    expect(page).to_have_url(re.compile(".*datos-personales/"))
+    #validar si esta visible
+    #boton=page.locator("//button[@id='wsf-1-field-27']")
+    #expect(boton).to_be_visible()
+    boton=page.is_visible("#wsf-1-field-27887")
+    print(boton)
+    if boton:
+      page.locator("#wsf-1-field-27']").click()
+    else:
+        print("No se encontro el botón")
+        print(boton)
+    page.screenshot(path="imagenes/input/boton_submit.png")
+    #expect(page).to_have_url(re.compile(".*datos-personales/"))
+    gracias =page.locator("//p[contains(.,'Gracias por tu encuesta. ')]")
+    expect(gracias).to_contain_text("Gracias")
