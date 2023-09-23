@@ -29,6 +29,12 @@ def test_select1(playwright: Playwright) -> None:
     Funcion.Texto("//input[contains(@id,'wsf-1-field-48')]", "300000111", 1)
     Funcion.Texto("//textarea[contains(@id,'wsf-1-field-49')]", "Direccion de sashita", tiempo)
 
+    #Checkbox
+    Funcion.Scroll_xy(0,700)
+    Funcion.Click("//label[contains(@id,'wsf-1-label-50-row-2')]", tiempo)
+    Funcion.Click_img("//label[contains(@id,'wsf-1-label-51-row-2')]",ruta+"Radio.png", tiempo)
+
+
 
 
 

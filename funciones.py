@@ -35,3 +35,23 @@ class Funciones_Globales:
           self.page.screenshot(path=ruta)
           time.sleep(tiempo)
 
+
+
+      def Click(self,selector, tiempo=1):
+           t=self.page.locator(selector)
+           expect(t).to_be_visible()
+           expect(t).to_be_enabled()
+           t.highlight()
+           t.click()
+           time.sleep(tiempo)
+
+
+      def Click_img(self,selector,ruta, tiempo=1):
+           t=self.page.locator(selector)
+           expect(t).to_be_visible()
+           expect(t).to_be_enabled()
+           t.highlight()
+           t.click()
+           self.page.screenshot(path=ruta)
+           time.sleep(tiempo)
+
