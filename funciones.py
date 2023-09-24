@@ -98,4 +98,33 @@ class Funciones_Globales:
           time.sleep(tiempo)
 
 
+      def validarTitulo_img(self,texto,ruta,tiempo=1):
+          expect(self.page).to_have_title(texto)
+          self.page.screenshot(path=ruta)
+          time.sleep(tiempo)
+
+
+      def validarUrl(self,texto,tiempo=1):
+          expect(self.page).to_have_url(re.compile(texto))
+          time.sleep(tiempo)
+
+
+      def validarUrl_img(self,texto,ruta,tiempo=1):
+          expect(self.page).to_have_url(re.compile(texto))
+          self.page.screenshot(path=ruta)
+          time.sleep(tiempo)
+
+      def validarNotificacion(self,selector,texto,tiempo=1):
+          t=self.page.locator(selector)
+          expect(t).to_contain_text(texto)
+          time.sleep(tiempo)
+
+      def validarNotificacion_img(self,selector,texto,ruta,tiempo=1):
+          t=self.page.locator(selector)
+          expect(t).to_contain_text(texto)
+          self.page.screenshot(path=ruta)
+          time.sleep(tiempo)
+
+
+
 

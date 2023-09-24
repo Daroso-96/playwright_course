@@ -42,6 +42,10 @@ def test_select1(playwright: Playwright) -> None:
 
     #Submit
     Funcion.Click("//button[contains(@id,'wsf-1-field-52')]", tiempo)
+    #Validar confirmación
+    Funcion.validarNotificacion("//p[contains(.,'Gracias por tu encuesta.')]", "Gracias", tiempo)
+    #Validar
+    Funcion.validarUrl("https://testingqarvn.com.es/combobox/" ,tiempo)
 
 
 
