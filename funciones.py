@@ -87,6 +87,7 @@ class Funciones_Globales:
           t =self.page.locator(selector)
           expect(t).to_be_visible()
           expect(t).to_be_enabled()
+          expect(t).is_hidden()
           t.highlight()
           t.select_option(label =valor)
           self.page.screenshot(path=ruta)
