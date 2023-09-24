@@ -55,3 +55,47 @@ class Funciones_Globales:
            self.page.screenshot(path=ruta)
            time.sleep(tiempo)
 
+      def Combo_value(self,selector,valor,tiempo=1):
+          t =self.page.locator(selector)
+          expect(t).to_be_visible()
+          expect(t).to_be_enabled()
+          t.highlight()
+          t.select_option(valor)
+          time.sleep(tiempo)
+
+
+      def Combo_value_img(self,selector,valor,ruta,tiempo=1):
+          t =self.page.locator(selector)
+          expect(t).to_be_visible()
+          expect(t).to_be_enabled()
+          t.highlight()
+          t.select_option(valor)
+          self.page.screenshot(path=ruta)
+          time.sleep(tiempo)
+
+
+      def Combo_label(self,selector,valor,ruta,tiempo=1):
+          t =self.page.locator(selector)
+          expect(t).to_be_visible()
+          expect(t).to_be_enabled()
+          t.highlight()
+          t.select_option(label =valor)
+          time.sleep(tiempo)
+
+
+      def Combo_label_img(self,selector,valor,ruta,tiempo=1):
+          t =self.page.locator(selector)
+          expect(t).to_be_visible()
+          expect(t).to_be_enabled()
+          t.highlight()
+          t.select_option(label =valor)
+          self.page.screenshot(path=ruta)
+          time.sleep(tiempo)
+
+
+      def validarTitulo(self,texto,tiempo=1):
+          expect(self.page).to_have_title(texto)
+          time.sleep(tiempo)
+
+
+
