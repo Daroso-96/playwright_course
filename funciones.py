@@ -87,7 +87,7 @@ class Funciones_Globales:
           t =self.page.locator(selector)
           expect(t).to_be_visible()
           expect(t).to_be_enabled()
-          expect(t).is_hidden()
+          #expect(t).is_hidden()
           t.highlight()
           t.select_option(label =valor)
           self.page.screenshot(path=ruta)
@@ -126,6 +126,12 @@ class Funciones_Globales:
           self.page.screenshot(path=ruta)
           time.sleep(tiempo)
 
+      def mouseXY(self,x,y,tiempo=1):
+          self.page.mouse.click(x,y)
+          time.sleep(tiempo)
 
+      def Tab(self,tiempo=1):
+          self.page.keyboard.press("Tab")
+          time.sleep(tiempo)
 
 
